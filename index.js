@@ -6,11 +6,13 @@ const session = require('express-session');
 const MongoDBStore = require('connect-mongodb-session')(session);
 const UserRoutes = require('./routes/UserRoutes');
 const MechanicRoutes = require('./routes/MechanicRoutes');
+const AdminRoute = require('./routes/admin');
 const userschema = require('./models/Users')
 const multer = require('multer')
 const axios = require('axios');
 const ejs = require('ejs')
 const dotenv = require('dotenv')
+const fs = require('fs')
 dotenv.config({
   path:'.env'
 })
@@ -21,22 +23,27 @@ const app = express();
 app.set("views","./views")
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
+var path = require('path');
 app.use(express.static('public'));
-app.use('/uploads', express.static('uploads'));
+
+// app.use('/uploads', express.static( __dirname + '/uploads/'));
+
 const PORT =  process.env.PORT || 3000;
 
 const MONGODB_URI = process.env.MONGODB_URI
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'uploads'); // Define the destination folder
+
+    cb(null, path.join(__dirname, 'public', 'uploads'));// Define the destination folder
+
   },
   filename: (req, file, cb) => {
     cb(null, Date.now() + '-' + file.originalname); // Define the file name
   },
 });
 
-const upload = multer({ storage: storage });
+const public = multer({ storage: storage });
 
 
 mongoose.connect(MONGODB_URI, {
@@ -55,37 +62,28 @@ app.use(session({
     saveUninitialized: false,
     store,
 }));
+  app.get('/:filename',(req,res)=>{
+    const filename = req.params.filename;
+    const imagePath = path.resolve(__dirname + '/public/uploads');
+    console.log(imagePath);
+    res.sendFile(imagePath)
+})
 
-// ADMIN
 
-const users = [
-    { username: 'admin', password: 'admin' },
-];
 
-app.get('/admin', (req, res) => {
-    res.render('admin');
-});
-app.post('/adminlogin', (req, res) => {
-    const { username, password } = req.body;
-  
-    const user = users.find(u => u.username === username && u.password === password);
-    if (user) {
-      req.session.user = user;
-      res.redirect('/admindashboard');
-    } else {
-      res.send('Invalid username or password');
-    }
-});
-app.get('/admindashboard', (req, res) => {
-    const user = req.session.user;
-    res.render('dasboardadmin',{ user,userschema })
+  app.get('/', (req, res) => {
+
+    res.render('dashboardsignin')
 
   });
 app.use(UserRoutes)
 app.use("/technician", MechanicRoutes)
+app.use(AdminRoute)
 
 
-
+app.get('/faq', (req, res) => {
+  res.render('faq');
+});
 
 app.listen(PORT, () => {
     console.log(`Server started on http://localhost:${PORT}`);

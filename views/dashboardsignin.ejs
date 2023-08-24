@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <style>
 
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/css/query.css">
+    <link rel="stylesheet" href="/css/query.css">
+    <link rel="stylesheet" href="/css/card.css">
     <link rel="stylesheet" href="/css/style.css">
-    <!-- <link rel="stylesheet" href="/assets/css/dashboard.css"> -->
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
@@ -20,21 +21,32 @@
 </head>
 </body>
 
+<header>
+    <nav class="nav">
+        
+           <h2 class="logo">smech</h2>
+<i class="fa-bars fa mobile"></i>
+          
+        
+        <ul class="undernav">
+            <li><a href="/review">Review</a></li>
+            <li><a href="/faq">FAQS</a></li>
+            <li><a href='/technician/signup'>become a technician</a></li>
+            <a class='btn' href='/signup'>Find Mechanics</a>
+            <a href="/signup" style="display: flex;">
 
-        <nav class="nav">
-            <ul class="undernav">
-               <h2 class="logo">Smech</h2>
-                <li><a href="#service">services</a></li>
-                <li><a href="/donate">support us</a></li>
-                <li><a href="#"></a></li>
-            </ul>
-            <ul class="undernav">
-                <li><a href="/technician/signup">become a technician</a></li>
-                <a href="/signup" style="padding-top: 10px;">signup</a>
-               
+                <li style="padding-top: 14px;">Welcome</li>
+            </a>
 
-            </ul>
-        </nav>
+        </ul>
+    </nav>
+  
+       
+          
+
+        
+
+      
         <div class="hero">
       <div class="div">
         <h1 class="head">Car Repair, <br>Delivered.</h1>
@@ -43,11 +55,11 @@
             Omech brings the shop to you.
             
             </p>
-            <button class="btn-2">Find mechanics</button>
+            <btn href="#mech" class="btn-2">Find mechanics</btn>
       </div>
 <img src="/img/light_skin_black_auto_mechanic_rigged_lxo_00-removebg-preview (1).png" class="img" alt="">
         </div>
-    </header>
+</header>
     <section class="rating">
         <div class="rater">
             <div class="rates">
@@ -143,26 +155,33 @@
         <p class="service-p subline">We’re here to keep you moving. Easy online scheduling, upfront pricing, and expert auto mechanics that come to your home or office.</p>
         <img src="/img/techs.png" class="imgs" alt="" srcset="">
     </section>
-    <section class="service ash" id="service">
+    <div class="service">
+        <div class="row j">
+            <div class="h">
+                <h1 id="heading" class="mb-0">Find Reliable Mechanics</h1>
+                <small id="heading0">Creative Thinking For Business PSD Template</small>
+            </div>
+        </div>
+    <div class="row justify-content-center">
+         
+       
+        <a href="/signup" class="seeall">Signup Now</a>
+        
+    </div>
+
+        <a href="/mechs" class="btn btn-lg text-center btn-light" style="margin-top: 10px;">VIEW MORE MECHANICS</a>
+    </div>
+
+    <!-- <section class="service ash" id="mech service">
         <h1 class="heading">Our Mechanic</h1>
         <p class="service-p subline">Choose from our amazing</p>
 
-        <div class="filter">
-            <h1>Filter:</h1>
-            <div class="filters">
-                <select name="speciality" id="">
-                    <option value="">kaduna</option>
-                    <option value="">abuja</option>
-                </select>
-                <select name="location" id="">
-                    <option value="">brake pads</option>
-                    <option value="">engine</option>
-                </select>
-            </div>
-        </div>
+
 
         <div class="row">
-                <a href="/signup">signup to view mechanics</a>
+            <div class="row">
+
+
 
 
               
@@ -216,9 +235,9 @@
             </div> -->
         </div>
 
-    </section>
+    </section> -->
 
-    <section class="pricing" >
+    <!-- <section class="pricing" >
         <h1 class="repair">Honest, upfront pricing*</h1>
         <p class="repair-p">*Seriously.</p>
         <div class="pricings">
@@ -254,7 +273,7 @@
      
     
         
-    </section>
+    </section> -->
     <section class="how">
         <h1 class="repair">Car repair as easy as 1, 2, 3</h1>
         <p class="service-p">We’ll bring all the parts and tools needed for your repair or service… you just provide the <br> vehicle! The real question is, what will you do with all that free time back in your day?</p>
@@ -322,44 +341,74 @@
         </div>
 
     </section> -->
-    <footer>
-        <div class="omechs">
-            <h2 class="logo">omech</h2>
-
-
+  <!-- Site footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 col-md-6">
+          <h6>About</h6>
+          <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
         </div>
 
-
-        <div class="links">
-            <div class="footerhead">
-                <h3>Common Repairs</h3> 
-                <ul>
-                    <li class="list"> Replace Front Brake Pads</li>
-                    <li class="list">Oil Change</li>
-                    <li class="list">Replace Spark Plug</li>
-                    <li class="list">Replace Battery</li>
-                    <li class="list">Replace Alternator</li>
-                </ul>
-            </div>
-            <div class="footerhead">
-                <h3>Contact</h3>
-                <li class="list">phone:08067816564</li>
-                <li class="list">mail:codingabdullahi@gmail.com</li>
-
-            </div>
-            <div class="linked">
-                <h3 class="footerhead">Cities Served</h3>
-                <ul>
-                    <li class="list">kaduna</li>
-                    <li class="list">lagos</li>
-                    <li class="list">kogi</li>
-                    <li class="list">kano</li>
-                    <li class="list">abuja</li>
-                </ul>
-            </div>
+        <div class="col-xs-6 col-md-3">
+          <h6>Categories</h6>
+          <ul class="footer-links">
+            <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+            <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+            <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+            <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+            <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+            <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+          </ul>
         </div>
-    </footer>
 
-    <script src="./assets/js/script.js"></script>
+        <div class="col-xs-6 col-md-3">
+          <h6>Quick Links</h6>
+          <ul class="footer-links">
+            <li><a href="http://scanfcode.com/about/">About Us</a></li>
+            <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+            <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+            <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+            <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-6 col-xs-12">
+          <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+       <a href="#">Scanfcode</a>.
+          </p>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-xs-12">
+          <ul class="social-icons">
+            <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+            <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+            <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+          </ul>
+        </div>
+      </div>
+    </div>
+</footer>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    const mobileElement = document.querySelector(".mobile");
+    const undernavElement = document.querySelector(".undernav");
+
+    if (mobileElement && undernavElement) {
+        mobileElement.addEventListener("click", function () {
+            undernavElement.classList.toggle("block");
+        });
+    } else {
+        console.error("Elements not found.");
+    }
+    console.log('hulo');
+});
+</script>
 </body>
 </html>
