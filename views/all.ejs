@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/js/script.js"></script>
+        <link rel="shortcut icon" href="./assets/img/favicon-32x32.png" type="image/x-icon">
+        <link rel="stylesheet" href="/css/query.css">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/card.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+        <title>SMECH</title>
+        <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3090476800151793"
+         crossorigin="anonymous"></script> -->
+    </head>
+<body>
+    <div class="container-fluid px-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-12 text-center mb-5">
+                <h1 id="heading" class="mb-0">Find Reliable Mechanics</h1>
+                <small id="heading0">Creative Thinking For Business PSD Template</small>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+         
+                
+    
+                
+    
+       
+        <% mechanics.forEach(mechanics => { %>
+            <div class="card">
+                <div class="card-header" style="background-image: url(/uploads/<%= mechanics.profilePicture %>)">
+        
+                    <div class="card-header-slanted-edge">
+                      <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 200">
+                        <path class="polygon" d="M-20,200,1000,0V200Z" />
+                      </svg> -->
+                      <a href="/technician/profile/<%= mechanics._id %>" class="btn-follow"><span class="sr-only">Follow</span></a>
+                    </div>
+        
+                </div>
+        
+                <div class="card-body">
+              <h2 class="name"><%= mechanics.fullname %></h2>
+              <h4 class="job-title"><%= mechanics.speciality %></h4>
+              <div class="bio"><%= mechanics.about %></div>
+              <div class="social-accounts">
+                <a href="<%= mechanics.facebook %>"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/facebook.svg" alt=""><span class="sr-only">Dribbble</span></a>
+                <a href="<%= mechanics.instagram %>"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/twitter.svg" alt=""><span class="sr-only">Twitter</span></a>
+                <a href="<%= mechanics.twitter %>"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/instagram.svg" alt=""><span class="sr-only">Instagram</span></a>
+              </div>
+                </div>
+         </div>
+        
+    
+    
+        <% }); %>
+        </div>
+    
+
+    </div>
+</body>
+</html>
+

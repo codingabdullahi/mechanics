@@ -1,0 +1,63 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #003366;
+
+
+}
+.form-container{
+  background-color: #AAAAAA;
+  width: 445px;
+  padding: 20px;
+  line-height: 40px;
+  margin: 0 auto;
+}
+.btn{
+  background-color: #003366 !important;
+  border: 1px solid transparent;
+}
+input{
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+  width: 400px;
+}
+.form_input{
+  display: flex;
+  flex-direction: column;
+}
+#getLocationBtnl{
+  /* background-color: #003366;
+  padding: 5px;
+  width: 120px; */
+}
+.locate{
+  height: 50px;
+  position: relative;
+  top: -44px;
+  left: 175px;
+
+}
+.image-preview {
+
+}
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 2px dashed #333;
+  background-size: 100px;
+  display: none;
+}
+input{
+  text-transform: capitalize;
+}

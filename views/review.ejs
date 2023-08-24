@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Submission</title>
+</head>
+<body>
+    <h1>Submit a Review</h1>
+    <form action="/submit-review" method="post" enctype="multipart/form-data">
+        <label for="name">Name:</label>
+        <input type="text" name="name" required><br>
+        
+        <label for="picture">Picture:</label>
+        <input type="file" name="picture" accept="image/*" required><br>
+        
+        <label for="comment">Comment:</label><br>
+        <textarea name="comment" rows="4" required></textarea><br>
+        
+        <button type="submit">Submit Review</button>
+    </form>
+</body>
+</html>

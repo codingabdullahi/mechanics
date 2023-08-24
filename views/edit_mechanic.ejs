@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/form.css">  
+    <link rel="stylesheet" href="/css/style.css">  
+    <title>SIGNUP</title>
+</head>
+<body>
+  <section class="form">
+    <div class="ads">
+
+    </div>
+
+  </section>
+  <div class="form-container">
+    <h1>UPDATE PROFILE</h1>
+  <form action="/technician/mechanics/<%= mechanic._id %>" method="POST" enctype="multipart/form-data">
+    <div class="image-preview">
+      <div class="circle"></div>
+    </div>
+
+      <div class="form_input">
+        <label for="fullname">Fullname</label>
+        <input type="text" id="fullname" value="<%= mechanic.fullname %>" name="fullname" required>
+      </div>
+    <div class="form_input">
+      <label for="email">Email:</label>
+      <input type="email" id="email" value="<%= mechanic.email %>" name="email" required>
+    </div>
+
+    <div class="form_input">
+      <label for="name">Username:</label>
+      <input type="text" id="name" value="<%= mechanic.username %>" name="username" required> 
+    </div>
+
+    <div class="form_input">
+      <label for="name">Phone:</label>
+      <input type="text" id="phone" value="<%= mechanic.phone %>" name="phone" required> 
+    </div>
+
+
+    
+    <div class="form_input">
+      <label for="name">Location:</label>
+   <input type="text" name="location" id="location" value="<%= mechanic.location %>">
+       <img src="/img/location-svgrepo-com.svg" class="locate" id="getLocationBtn" alt="">
+    <!-- <p id="getLocationBtn">get Location</p> -->
+    </div>
+
+    <div class="form_input">
+      <label for="name">Speciality</label>
+      <input type="text" id="name" name="speciality" value="<%= mechanic.speciality %>" required>  
+    </div>
+    <div class="form_input">
+      <label for="name">Facebook</label>
+      <input type="text" id="name" name="facebook" value="<%= mechanic.facebook %>" required>  
+    </div>
+    <div class="form_input">
+      <label for="name">Twitter</label>
+      <input type="text" id="twitter" name="twitter" value="<%= mechanic.twitter %>" required>  
+    </div>
+    <div class="form_input">
+      <label for="name">Instagram:</label>
+      <input type="text" id="instagram" name="instagram" value="<%= mechanic.instagram %>" required>  
+    </div>
+    <div class="form_input">
+      <label for="name">About:</label>
+      <textarea name="about" id="" cols="30" rows="10" placeholder="Write about yourself" value="">
+        <%= mechanic.about %>
+      </textarea>
+      <!-- <input type="text" id="about" name="about" required>   -->
+    </div>
+
+    <button type="submit" class="btn seeall" >UPDATE</button>
+  </form>
+  </div>
+  <script src="/js/script.js"></script>
+</body>
+</html>

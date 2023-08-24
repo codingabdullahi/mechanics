@@ -1,0 +1,14 @@
+input{
+    width: 500px;
+    border-radius: 10px;
+    height: 50px;
+    border: 1px solid #0b8ed5 ;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 15px;
+}
+.seeall{
+    margin-top: 0px;
+}

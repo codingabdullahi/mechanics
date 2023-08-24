@@ -1,0 +1,7 @@
+*{
+    /* overflow: hidden !important; */
+}
+a{
+    text-transform: lowercase;
+    color: #0b8ed5;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<body class="admin">
+    <div class="sidebar">
+  
+        <h1>Welcome, <%= mechanics.fullname %>!</h1>
+        <ul>
+          <li><a href="/technician/mechanics/<%= mechanics._id %>">My Account</a></li>
+          <!-- <li><a href="">Request</a></li>
+          <li><a href="">Accepted</a></li>
+          <li><a href="">Declined</a></li> -->
+        </ul>
+    </div>
+    <div class="body" style="padding: 20px;">
+      <!-- <div class="row">
+        <a href="" class="">Request
+
+        </a>
+        <a href="" class="">Accepted</a>
+        <a href="" class="">Declined</a>
+
+      </div> -->
+
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Viewed By</th>
+        </tr>
+        <% mechanicss.forEach(mechanics => { %>
+          <tr>
+            <td><%= mechanics.name %></td>
+            <td>
+              <ul>
+                <% mechanics.viewedBy.forEach(user => { %>
+                  <li><%= user.name %></li>
+                <% }) %>
+              </ul>
+            </td>
+          </tr>
+        <% }) %>
+      </table>
+    </div>
+
+</body>
+</html>

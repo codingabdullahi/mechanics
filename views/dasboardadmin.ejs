@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<body class="admin">
+    <div class="sidebar">
+    <% if (user && user.username) { %>
+        <h1>Welcome to the dashboard, <%= user.username %>!</h1>
+      <% } else { %>
+        <p>You are not authenticated. Please <a href="/">log in</a>.</p>
+    <% } %>
+    </div>
+    <h1></h1>
+
+</body>
+</html>

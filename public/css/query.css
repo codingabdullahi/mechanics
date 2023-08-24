@@ -1,0 +1,220 @@
+/* DESKTOP SCREEN */
+
+
+/* TABLET MODE */
+
+
+
+
+/* PHONE POTRAIT */
+
+
+
+  /* Mobile First i.e Smaller to Larger Devices */
+
+  /* X-Small devices (portrait phones, less than 576px) */
+
+  /* Small devices (landscape phones, 576px and up) */
+  @media (max-width: 576px) { 
+    nav{
+        display: none;
+    }
+
+    .rating{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .reviewed{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .rev{
+        margin-right: 0 !important;
+    }
+    .steps{
+        flex-direction: column;
+        gap: 20px !important;
+        justify-content: center;
+    }
+    .pricings{
+        flex-direction: column;
+        gap: 20px;
+    }
+    .imgs{
+        height:200px;
+        width: 200px !important;
+    }
+    .hero{
+        flex-direction: column;
+        padding: 20px !important;
+        text-align: center;
+    }
+    .head{
+        font-size: 30px !important;
+        text-align: center !important;
+    }
+    .img{
+        height: 345px !important;
+    }
+    .box{
+        align-self: center;
+    }
+    footer{
+        flex-direction: column;
+    }
+
+    .heading{
+        color: #002042;
+        font-size: 24px !important;
+        font-stretch: normal;
+        font-style: normal;
+ 
+        letter-spacing: -.5px;
+        line-height: 1.08;
+        text-align: center;
+        
+    }
+    .mobile{
+        display: block ;
+    }
+    .block{
+        display: block !important;
+    }
+
+      
+      .menu-icon {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+      }
+      
+      .bar {
+        width: 100%;
+        height: 4px;
+        background-color: #333;
+        transition: transform 0.3s ease;
+      }
+      
+      /* Rotating the bars to create the "X" shape when active */
+      .active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      
+      .active .bar:nth-child(2) {
+        opacity: 0;
+      }
+      
+      .active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+      
+
+      
+
+    .van{
+        /* height: 393px; */
+        width: 393px !important;
+    }
+    .notsure{
+        color: #002042;
+    display: flex;
+    flex-direction: column;
+    font-size: 24px !important;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: 700;
+    letter-spacing: -.5px;
+    line-height: 1.08;
+    margin-top: 104px;
+  
+    text-align: center;
+    text-transform: none;
+    }
+    .repair{
+        font-size: 24px !important;
+    }
+    .mb{
+        margin-bottom: 20px;
+    }
+    .pt{
+        padding-top: 20px !important;
+    }
+    .subline{
+        color: #767676;
+        font-size: 13px !important;
+        font-stretch: normal;
+        font-style: normal;
+        font-weight: 500;
+        letter-spacing: -.1px;
+        line-height: 1.46;
+        margin-top: 16px;
+        text-align: center;
+    }
+    .none{
+        display: none;
+    }
+    .rating{
+        justify-content: center;
+    }
+    .rater{
+        align-self: center;
+    }
+
+    .links{
+        flex-direction: column;
+    }
+    .undernav{
+        display: none;
+    }
+    .memu{
+        display: block;
+    }
+
+    /* .card{
+        align-self: center;
+    } */
+   }
+
+  /* Medium devices (tablets, 768px and up) */
+  @media (min-width: 768px) {  }
+
+  /* Large devices (desktops, 992px and up) */
+  @media (min-width: 992px) {  }
+
+  /* X-Large devices (large desktops, 1200px and up) */
+  @media (min-width: 1200px) { }
+
+  /* XX-Large devices (larger desktops, 1400px and up) */
+  @media (min-width: 1400px) { }
+
+
+  /* Desktop First i.e Larger to Smaller Devices */
+
+  /* XX-Large devices (larger desktops) */
+  /* No media query since the xxl breakpoint has no upper bound on its width */
+
+  /* X-Large devices (large desktops, less than 1400px) */
+  @media (max-width: 1399.98px) {  }
+
+  /* Large devices (desktops, less than 1200px) */
+  @media (max-width: 1199.98px) {  }
+
+  /* Medium devices (tablets, less than 992px) */
+  @media (max-width: 991.98px) {  }
+
+  /* Small devices (landscape phones, less than 768px) */
+  @media (max-width: 767.98px) {  }
+
+  /* X-Small devices (portrait phones, less than 576px) */
+  @media (max-width: 575.98px) {  }
+/* Mobile menu styles */
+
+/* Your existing styles for larger screens */
+
+/* Media query for mobile responsiveness */
+
+/* General Styles */
+
+  
