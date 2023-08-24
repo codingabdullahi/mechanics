@@ -8,6 +8,9 @@ body {
 
     scroll-behavior: smooth; /* Enable smooth scrolling */
 }
+.h{
+  color: #000000;
+}
 .nav{
     display: flex; justify-content: space-around;
     background-color: #f4f1ef;
