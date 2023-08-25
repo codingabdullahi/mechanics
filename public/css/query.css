@@ -1,20 +1,4 @@
-/* DESKTOP SCREEN */
 
-
-/* TABLET MODE */
-
-
-
-
-/* PHONE POTRAIT */
-
-
-
-  /* Mobile First i.e Smaller to Larger Devices */
-
-  /* X-Small devices (portrait phones, less than 576px) */
-
-  /* Small devices (landscape phones, 576px and up) */
   @media (max-width: 576px) { 
     nav{
         display: none;

@@ -258,6 +258,9 @@ a{
     border: 1px solid transparent;
     padding-top: 40px;
 }
+.mobile{
+  display: none;
+}
 .seeall{
     background: #0b8ed5;
     border-radius: 6px;
