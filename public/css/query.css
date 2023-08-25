@@ -39,6 +39,7 @@
     }
     .img{
         height: 345px !important;
+        margin-top: 15px;
     }
     .box{
         align-self: center;
