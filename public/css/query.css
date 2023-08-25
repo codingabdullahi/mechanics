@@ -150,7 +150,7 @@
         flex-direction: column;
     }
     .undernav{
-        display: none;
+        display: none !important;
     }
     .memu{
         display: block;

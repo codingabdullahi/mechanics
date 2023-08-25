@@ -538,12 +538,12 @@ section{
   width: 30%;
 }
 
-.fa {
+/* .fa {
   color: white;
   background-color: black;
   width: 40px;
   transition: 0.2s;
-}
+} */
 
 .fa:hover {
   opacity: 1;
