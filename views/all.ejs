@@ -31,11 +31,7 @@
 
         </div>
         <div class="row justify-content-center">
-         
-                
-    
-                
-    
+          <input type="text" id="searchBar" placeholder="Search...">
        
         <% mechanics.forEach(mechanics => { %>
             <div class="card">
@@ -53,6 +49,7 @@
                 <div class="card-body">
               <h2 class="name"><%= mechanics.fullname %></h2>
               <h4 class="job-title"><%= mechanics.speciality %></h4>
+              <h4 class="job-title location"><%= mechanics.location %></h4>
               <div class="bio"><%= mechanics.about %></div>
               <div class="social-accounts">
                 <a href="<%= mechanics.facebook %>"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/facebook.svg" alt=""><span class="sr-only">Dribbble</span></a>
@@ -69,6 +66,27 @@
     
 
     </div>
+
+    <script>
+      const searchBar = document.getElementById('searchBar');
+      const itemList = document.getElementsByClassName('card');
+      const items = itemList.getElementsByClassName('location');
+
+searchBar.addEventListener('input', function() {
+  const searchText = searchBar.value.toLowerCase();
+  
+  for (const item of items) {
+    const itemName = item.textContent.toLowerCase();
+    
+    if (itemName.includes(searchText)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  }
+});
+
+    </script>
 </body>
 </html>
 
