@@ -10,7 +10,7 @@ const Mech = require('../models/Mech');
 
 const storage = multer.diskStorage({
   
-  destination:path.normalize(path.join( '..', 'public', 'uploads')),
+  destination:path.normalize(path.join(__dirname, '..', 'public', 'uploads')),
   filename: (req, file, callback) => {
     callback(null, `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
   },
