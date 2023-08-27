@@ -30,11 +30,11 @@
             </div>
 
         </div>          
-        <input type="text" id="searchBar" placeholder="Search...">
-        <div class="row justify-content-center">
 
-       
-        <% mechanics.forEach(mechanics => { %>
+        <input type="text" id="locationSearch" placeholder="Search by location...">
+
+       <div class="mechanicsContainer">
+                <% mechanics.forEach(mechanics => { %>
             <div class="card">
                 <div class="card-header" style="background-image: url(/uploads/<%= mechanics.profilePicture %>)">
         
@@ -58,7 +58,9 @@
                 <a href="<%= mechanics.twitter %>"><img src="https://res.cloudinary.com/dj14cmwoz/image/upload/v1491077480/profile-card/images/instagram.svg" alt=""><span class="sr-only">Instagram</span></a>
               </div>
                 </div>
-         </div>
+        </div>
+
+
         
     
     
@@ -69,24 +71,40 @@
     </div>
 
     <script>
-      const searchBar = document.getElementById('searchBar');
-      const itemList = document.getElementsByClassName('card');
-      const items = itemList.getElementsByClassName('location');
-
-searchBar.addEventListener('input', function() {
-  const searchText = searchBar.value.toLowerCase();
-  
-  for (const item of items) {
-    const itemName = item.textContent.toLowerCase();
+      const locationSearchInput = document.getElementById('locationSearch');
+      const mechanicsContainer = document.getElementById('mechanicsContainer');
+      const mechanics = <%= JSON.stringify(mechanics) %>; // Pass mechanics data from your server-side code
     
-    if (itemName.includes(searchText)) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  }
-});
-
+      locationSearchInput.addEventListener('input', function() {
+        const searchTerm = locationSearchInput.value.toLowerCase();
+    
+        const filteredMechanics = mechanics.filter(mechanic => {
+          const mechanicLocation = mechanic.location.toLowerCase();
+          return mechanicLocation.includes(searchTerm);
+        });
+    
+        updateMechanics(filteredMechanics);
+      });
+    
+      function updateMechanics(filteredMechanics) {
+        mechanicsContainer.innerHTML = ''; // Clear previous results
+    
+        filteredMechanics.forEach(mechanic => {
+          const card = createMechanicCard(mechanic);
+          mechanicsContainer.appendChild(card);
+        });
+      }
+    
+      function createMechanicCard(mechanic) {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        // Create and append card content here
+    
+        return card;
+      }
+    
+      // Initial display of mechanics
+      updateMechanics(mechanics);
     </script>
 </body>
 </html>
