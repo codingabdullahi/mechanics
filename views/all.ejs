@@ -31,9 +31,9 @@
 
         </div>          
 
-        <input type="text" id="locationSearch" placeholder="Search by location...">
+        <input type="text" id="mySearch" placeholder="Search by location...">
 
-       <div class="mechanicsContainer">
+       <div class="mechanicsContainer" id="mechanicsContainer">
                 <% mechanics.forEach(mechanics => { %>
             <div class="card">
                 <div class="card-header" style="background-image: url(/uploads/<%= mechanics.profilePicture %>)">
@@ -71,25 +71,26 @@
     </div>
 
     <script>
-      const searchBar = document.getElementById('searchBar');
-      const itemList = document.getElementsByClassName('card');
-      const items = itemList.getElementsByClassName('location');
-
-searchBar.addEventListener('input', function() {
-  const searchText = searchBar.value.toLowerCase();
-  
-  for (const item of items) {
-    const itemName = item.textContent.toLowerCase();
-    
-    if (itemName.includes(searchText)) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  }
-});
-
+      function myFunction() {
+        // Declare variables
+        var input, filter, ul, li, a, i;
+        input = document.getElementById("mySearch");
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("mechanicsContainer");
+        li = ul.getElementsByClassName("card");
+      
+        // Loop through all list items, and hide those who don't match the search query
+        for (i = 0; i < li.length; i++) {
+          a = li[i].getElementsByTagName("a")[0];
+          if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+          } else {
+            li[i].style.display = "none";
+          }
+        }
+      }
     </script>
+
 </body>
 </html>
 
