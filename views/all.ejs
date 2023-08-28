@@ -33,7 +33,7 @@
 
         <input type="text" id="locationSearch" placeholder="Search by location...">
 
-       <div class="mechanicsContainer row">
+       <div class="mechanicsContainer">
                 <% mechanics.forEach(mechanics => { %>
             <div class="card">
                 <div class="card-header" style="background-image: url(/uploads/<%= mechanics.profilePicture %>)">
@@ -71,40 +71,24 @@
     </div>
 
     <script>
-      const locationSearchInput = document.getElementById('locationSearch');
-      const mechanicsContainer = document.getElementById('mechanicsContainer');
-      const mechanics = <%= JSON.stringify(mechanics) %>; // Pass mechanics data from your server-side code
+      const searchBar = document.getElementById('searchBar');
+      const itemList = document.getElementsByClassName('card');
+      const items = itemList.getElementsByClassName('location');
+
+searchBar.addEventListener('input', function() {
+  const searchText = searchBar.value.toLowerCase();
+  
+  for (const item of items) {
+    const itemName = item.textContent.toLowerCase();
     
-      locationSearchInput.addEventListener('input', function() {
-        const searchTerm = locationSearchInput.value.toLowerCase();
-    
-        const filteredMechanics = mechanics.filter(mechanic => {
-          const mechanicLocation = mechanic.location.toLowerCase();
-          return mechanicLocation.includes(searchTerm);
-        });
-    
-        updateMechanics(filteredMechanics);
-      });
-    
-      function updateMechanics(filteredMechanics) {
-        mechanicsContainer.innerHTML = ''; // Clear previous results
-    
-        filteredMechanics.forEach(mechanic => {
-          const card = createMechanicCard(mechanic);
-          mechanicsContainer.appendChild(card);
-        });
-      }
-    
-      function createMechanicCard(mechanic) {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        // Create and append card content here
-    
-        return card;
-      }
-    
-      // Initial display of mechanics
-      updateMechanics(mechanics);
+    if (itemName.includes(searchText)) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  }
+});
+
     </script>
 </body>
 </html>
