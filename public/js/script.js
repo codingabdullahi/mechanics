@@ -1,25 +1,25 @@
-const button = document.querySelector("#getLocationBtn");
-const inputlocation = document.querySelector("#location");
+const button = document.querySelector("#location");
+// const inputlocation = document.querySelector("#location");
 button.addEventListener("click", ()=>{
     if(navigator.geolocation){
-        button.innerText = "Allow to detect location";
+        button.value = "Allow to detect location";
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     }else{
-        button.innerText = "Your browser not support";
+        button.value = "Your browser not support";
     }
 });
 
 function onSuccess(position){
-    button.innerText = "Detecting your location...";
+    button.value = "Detecting your location...";
     let {latitude, longitude} = position.coords;
     fetch(`https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=ff5bb39b31c5449ba6f9b57c7fe5376a`)
     .then(response => response.json()).then(response =>{
         let allDetails = response.results[0].components;
         console.table(allDetails);
         let {state, city, road} = allDetails;
-        inputlocation.value = `${state} ,${city},${road}`;
+        button.value = `${state} ,${city},${road}`;
     }).catch(()=>{
-        button.innerText = "Something went wrong";
+        button.value = "Something went wrong";
     });
 }
 
