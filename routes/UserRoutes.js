@@ -43,16 +43,8 @@ router.get("/profile:/id",  controller.viewprofile)
 // VIEW ALL MECHANIC 
 router.get("/mechs",  controller.allmech)
 
-// REVIEWS
-// router.get('/review', async (req, res) => {
-//   try {
-//       const reviews = await Review.find();
-//       res.render('review', { reviews });
-//   } catch (err) {
-//       console.error(err);
-//       res.status(500).send('Internal Server Error');
-//   }
-// });
+
+
 router.post('/submit-review', upload.single('picture'),async (req, res) => {
   try {
     const { name,  comment } = req.body;
