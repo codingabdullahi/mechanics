@@ -71,9 +71,7 @@ const loginpage = async(req,res)=>{
 const dashboard = async(req,res)=>{
   const reviews = await Review.find();
   const user = req.session.user; // Assuming you have user information in the session
-  const mechanics = await User.aggregate([
-    { $sample: { size: 3 } }, // Retrieve 3 random documents
-  ]);
+  const mechanics = await Mech.find().limit(3)
   res.render('dashboard', { user, mechanics,reviews });
 }
 const allmech = async(req,res)=>{
