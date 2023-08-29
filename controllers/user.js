@@ -95,7 +95,7 @@ const getUser = async function(req,res){
     res.render('userList', { Mech }); // Render EJS template with users data
   } catch (error) {
     console.error('Error fetching users:', error);
-    res.status(500).send('Internal Server Error');
+    res.status(500).send('Internal rubbish  Server Error');
   }
 }
 
