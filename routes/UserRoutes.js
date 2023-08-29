@@ -44,7 +44,15 @@ router.get("/profile:/id",  controller.viewprofile)
 router.get("/mechs",  controller.allmech)
 
 
-
+router.get('/review', async (req, res) => {
+  try {
+      const reviews = await Review.find();
+      res.render('review', { reviews });
+  } catch (err) {
+      console.error(err);
+      res.status(500).send('Internal rubish Server Error');
+  }
+});
 router.post('/submit-review', upload.single('picture'),async (req, res) => {
   try {
     const { name,  comment } = req.body;
