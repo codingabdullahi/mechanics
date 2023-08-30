@@ -53,7 +53,7 @@ const store = new MongoDBStore({
 });
   
 app.use(session({
-    secret: 'minekey', // Replace with a strong secret key
+    secret: 'minekey', 
     resave: false,
     saveUninitialized: false,
     store,
@@ -69,7 +69,7 @@ app.use(session({
 
   app.get('/', (req, res) => {
 
-    res.render('dashboardsignin')
+    res.render('index')
 
   });
 app.use(UserRoutes)
