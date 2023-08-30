@@ -7,12 +7,8 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const UserRoutes = require('./routes/UserRoutes');
 const MechanicRoutes = require('./routes/MechanicRoutes');
 const AdminRoute = require('./routes/admin');
-const userschema = require('./models/Users')
 const multer = require('multer')
-const axios = require('axios');
-const ejs = require('ejs')
 const dotenv = require('dotenv')
-const fs = require('fs')
 dotenv.config({
   path:'.env'
 })
