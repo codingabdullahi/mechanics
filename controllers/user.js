@@ -19,7 +19,6 @@ const signup = async(req,res)=>{
         password: hashedPassword,
         phone,
         location,
-        username,
         profilePicture: req.file ? req.file.filename : null,
       });
   
