@@ -1,5 +1,5 @@
 // GETTING ALL MODULES 
-
+const reviews = require('./models/review');
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -20,6 +20,7 @@ app.set("views","./views")
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 var path = require('path');
+const review = require('./models/review');
 app.use(express.static('public'));
 
 // app.use('/uploads', express.static( __dirname + '/uploads/'));
@@ -76,8 +77,8 @@ app.use(session({
 
 
   app.get('/', (req, res) => {
-
-    res.render('index')
+    const reviews = review.find().limit(4)
+    res.render('index' , { reviews })
 
   });
 app.use(UserRoutes)
