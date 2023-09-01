@@ -225,6 +225,10 @@
         <h1 class="test-head  ">It’s your race. We’re your pit crew.</h1>
         <p class="test-para ">No matter where you’re headed, we’re here to get you there.</p>
         <div class="reviewed">
+
+            <% reviews.forEach(function(reviews) { %>
+                <li><%= reviews %></li>
+            <% }); %>
             <div class="rev">
                 <img src="/img/emm-removebg-preview.png" class="reviewer" alt="">
                 <h3 class="advice">Complimentary friendly advice</h3>
