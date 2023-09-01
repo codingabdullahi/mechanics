@@ -78,7 +78,7 @@ app.use(session({
 
   app.get('/', (req, res) => {
     const reviews = Review.find().limit(4)
-    res.render('index' , { reviews })
+    res.render('index' , {  reviews })
 
   });
 app.use(UserRoutes)
