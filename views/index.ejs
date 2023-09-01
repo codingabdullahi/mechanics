@@ -24,6 +24,35 @@
 
 <header>
     <nav class="nav">
+        <i class="uil uil-bars navOpenBtn"></i>
+        <a href="#" class="logo">SMe</a>
+        <p class="userName">Hello <%= user.userName %></p>
+  
+        <ul class="nav-links">
+          <i class="uil uil-times navCloseBtn"></i>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/home">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <ul class="none">
+            <li><a href="/view_profile/<%= user._id %>">view profile</a></li>
+            <li><a href="createServiceProvider">service provider profile</a></li>
+            <li class="logout"><a href="logout">Log out</a></li>
+          </ul>
+          <li><a href=""></a></li>
+        </ul>
+      
+        <i class="uil uil-search search-icon" id="searchIcon"></i>
+        <div class="search-box">
+          <i class="uil uil-search search-icon"></i>
+          <input type="text" placeholder="Search here..." />
+        </div>
+        <div class="drop">
+          <p class="username">welcome <%= user.userName %></p>
+          <a href="/view_profile/<%= user._id %>"></i><i class="uil uil-user userIcon"></i></a>
+        </div>
+      </nav>
+    <nav class="nav">
         
         <h2 class="logo">smech</h2>
 <i class="fa-bars fa mobile" style="padding-top:30px; display: none;"></i>
@@ -53,7 +82,7 @@
             Omech brings the shop to you.
             
             </p>
-            <a href="/signup" class="btn-2">Find mechanics</a>
+            <a href="/signup" class="btn-2"> Find mechanics </a>
       </div>
 <img src="/img/light_skin_black_auto_mechanic_rigged_lxo_00-removebg-preview (1).png" class="img" alt="">
         </div>

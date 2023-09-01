@@ -1,5 +1,5 @@
 // GETTING ALL MODULES 
-const reviews = require('./models/review');
+const Review = require('./models/review');
 const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
@@ -77,7 +77,7 @@ app.use(session({
 
 
   app.get('/', (req, res) => {
-    const reviews = review.find().limit(4)
+    const reviews = Review.find().limit(4)
     res.render('index' , { reviews })
 
   });
