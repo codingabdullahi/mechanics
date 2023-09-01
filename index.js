@@ -28,6 +28,14 @@ const PORT =  process.env.PORT || 3000;
 
 const MONGODB_URI = process.env.MONGODB_URI
 
+const cloudinary = require('cloudinary').v2;
+          
+cloudinary.config({ 
+  cloud_name: 'duccj29gc', 
+  api_key: '596384785614899', 
+  api_secret: 'A19x28rCeORJdPwss0j6kUfNJtY' 
+});
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
 
@@ -58,12 +66,12 @@ app.use(session({
     saveUninitialized: false,
     store,
 }));
-  app.get('/:filename',(req,res)=>{
-    const filename = req.params.filename;
-    const imagePath = path.resolve(__dirname + '/public/uploads');
-    console.log(imagePath);
-    res.sendFile(imagePath)
-})
+//   app.get('/:filename',(req,res)=>{
+//     const filename = req.params.filename;
+//     const imagePath = path.resolve(__dirname + '/public/uploads');
+//     console.log(imagePath);
+//     res.sendFile(imagePath)
+// })
 
 
 

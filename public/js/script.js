@@ -1,6 +1,6 @@
 const button = document.querySelector("#location");
 // const inputlocation = document.querySelector("#location");
-button.addEventListener("click", ()=>{
+window.addEventListener("load", ()=>{
     if(navigator.geolocation){
         button.value = "Allow to detect location";
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
