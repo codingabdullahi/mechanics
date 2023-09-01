@@ -305,14 +305,11 @@
             <% reviews.forEach(reviews => { %>
                 <div class="rev">
                     <img src="/uploads<%= reviews.picture  %>" class="reviewer" alt="">
-                  <p class="qoute"><%= reviews.comment  %></p>
-    
-                  <p class="carname">
-
-                    <%= reviews.name  %>
-                  </p>
+                    <p class="qoute"><%= reviews.comment  %></p>
+                    <p class="qoute"><%= reviews.name  %></p>                
                 </div>
             <% }); %>
+            
 
             <!-- <div class="rev">
                 <img src="/img/emm-removebg-preview.png" class="reviewer" alt="">
