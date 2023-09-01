@@ -81,6 +81,13 @@ const allmech = async(req,res)=>{
   const mechanics = await Mech.find()
   res.render('all', {  mechanics });
 }
+
+const myaccount = async(req,res)=>{
+  const user = req.session.user
+  // Assuming you have user information in the session
+
+   res.render('myaccount', {  user });
+ }
 const logout = async(req,res)=>{
 
   req.session.destroy();
