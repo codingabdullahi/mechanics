@@ -227,9 +227,16 @@
         <div class="reviewed">
 
             <% reviews.forEach(function(reviews) { %>
-                <li><%= reviews %></li>
+                <div class="rev">
+                    <img src="" class="reviewer" alt="">
+                  <p class="qoute"><%= reviews.comment  %></p>
+    
+                  <p class="carname">
+                    <%= reviews.name  %>
+                  </p>
+                </div>
             <% }); %>
-            <div class="rev">
+            <!-- <div class="rev">
                 <img src="/img/emm-removebg-preview.png" class="reviewer" alt="">
                 <h3 class="advice">Complimentary friendly advice</h3>
               <p class="qoute">“Jose is the best! My car broke down last week and he gave me a ton of advice and helped me get back on the road that day.”</p>
@@ -255,7 +262,7 @@
                 <h3 class="advice">At your home or office</h3>
                 <p class="qoute">“Phenomenal service techs with next level commitment. When I was ready to leave the office, everything was complete.”</p>
                 <p class="carname">Umee , 2011 Mazda CX5</p>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- <section class="getrepairs">
