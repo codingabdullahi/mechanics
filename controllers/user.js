@@ -70,6 +70,9 @@ const loginpage = async(req,res)=>{
 const dashboard = async(req,res)=>{
   const reviews = await Review.find();
   const user = req.session.user; // Assuming you have user information in the session
+  if(!user){
+    res.redirect('index')
+  }
   const mechanics = await Mech.find().limit(3)
   res.render('dashboard', { user, mechanics,reviews });
 }
