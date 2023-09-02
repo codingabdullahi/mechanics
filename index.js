@@ -8,10 +8,8 @@ const UserRoutes = require('./routes/UserRoutes');
 const MechanicRoutes = require('./routes/MechanicRoutes');
 const AdminRoute = require('./routes/admin');
 const multer = require('multer')
-const dotenv = require('dotenv')
-dotenv.config({
-  path:'.env'
-})
+require('dotenv').config()
+
 
 
 // SETTING VIEWS 
@@ -25,7 +23,7 @@ app.use(express.static('public'));
 
 // app.use('/uploads', express.static( __dirname + '/uploads/'));
 
-const PORT =  process.env.PORT || 3000;
+const PORT =  process.env.PORT || 5000;
 
 const MONGODB_URI = process.env.MONGODB_URI
 

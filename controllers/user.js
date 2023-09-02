@@ -27,6 +27,7 @@ const signup = async(req,res)=>{
       res.redirect('/login');
     } catch(err) {
       console.log(err);
+      res.send('an error occurred during your registration ')
       res.redirect('/signup');
     }
 
