@@ -9,7 +9,7 @@ const Review = require('../models/review');
 // signup
 const signup = async(req,res)=>{
 
-    const { email,password,phone,location,username} = req.body;
+    const { email,password,phone,location} = req.body;
 
     try {
       const hashedPassword = await bcrypt.hash(password, 10);
@@ -27,7 +27,7 @@ const signup = async(req,res)=>{
       res.redirect('/login');
     } catch(err) {
       console.log(err);
-      res.send('an error occurred during your registration ')
+
       res.redirect('/signup');
     }
 

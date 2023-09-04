@@ -24,7 +24,7 @@ app.use(express.static('public'));
 // app.use('/uploads', express.static( __dirname + '/uploads/'));
 
 const PORT =  process.env.PORT || 5000;
-
+                       
 const MONGODB_URI = process.env.MONGODB_URI
 
 const cloudinary = require('cloudinary').v2;
@@ -90,4 +90,4 @@ app.get('/faq', (req, res) => {
 
 app.listen(PORT, () => {
     console.log(`Server started on http://localhost:${PORT}`);
-});
+}); 
